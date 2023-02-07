@@ -18,7 +18,6 @@
 	<body>
 		<header class="p-3 mb-4 text-center header bg-primary">
 			<h1>Weather Dashboard</h1>
-			  <span id="time-display"></span>
 		  </header>
 
 		<main class="container">
@@ -28,47 +27,85 @@
 						<div class="col-3 mb-3">
 							<div class="card">
 								<h3 class="card-header">Search for a City:</h3>
-								<form id="search-form" class="mb-2" type="text" placeholder="Orlando">
-									<input id="search-input" class="form-input w-100" type="text" placeholder="Orlando">
-									<button class="btn btn-info btn-block">Search</button>
+									<input class="form-input w-100 search" type="text" placeholder="Orlando">
+									<input class="btn btn-info btn-block button" type="submit" value="Submit"></input>
 								</form>
 							</div>
 						</div>
 						<div class="col-9 mb-3">
 							<div class="card">
-								<h3 class="card-header">Service 2</h3>
 								<div class="card-body">
-									<p class="card-text">
-										Lorem, ipsum
-									</p>
+									<h3 class="card-title name date">City & Date</h3>
+									<p class="card-text">Temp:</p>
+									<p class="card-text">Wind:</p>
+									<p class="card-text">Humidity:</p>
+									<section class="row justify-content-around">
+										<h3 class="card-header text-center">5-Day Forecast:</h3>
+										<div class="col-12 col-sm-6 col-lg-2 mb-3">
+											<div class="card">
+												<div class="card-body">
+													<h3 class="card-title date">Date</h3>
+													<p class="card-text temp">Temp:</p>
+													<p class="card-text wind">Wind:</p>
+													<p class="card-text humidity">Humidity:</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6 col-lg-2 mb-3">
+											<div class="card">
+												<div class="card-body">
+													<h3 class="card-title date">Date</h3>
+													<p class="card-text temp">Temp:</p>
+													<p class="card-text wind">Wind:</p>
+													<p class="card-text humidity">Humidity:</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6 col-lg-2 mb-3">
+											<div class="card">
+												<div class="card-body">
+													<h3 class="card-title date">Date</h3>
+													<p class="card-text temp">Temp:</p>
+													<p class="card-text wind">Wind:</p>
+													<p class="card-text humidity">Humidity:</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6 col-lg-2 mb-3">
+											<div class="card">
+												<div class="card-body">
+													<h3 class="card-title date">Date</h3>
+													<p class="card-text temp">Temp:</p>
+													<p class="card-text wind">Wind:</p>
+													<p class="card-text humidity">Humidity:</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6 col-lg-2 mb-3">
+											<div class="card">
+												<div class="card-body">
+													<h3 class="card-title date">Date</h3>
+													<p class="card-text temp">Temp:</p>
+													<p class="card-text wind">Wind:</p>
+													<p class="card-text humidity">Humidity:</p>
+												</div>
+											</div>
+										</div>
+									</section>
 								</div>
 							</div>
 						</div>	
-						<section class="row">
-							<div class="col-6"></div>
-								<h3 class="card-header">Service 3</h3>
-									<p class="card-body">Lorem</p>
-							</div>
-							<div class="col-6"></div>
-								<h3 class="card-header">Service 3</h3>
-									<p class="card-body">Lorem</p>
-							</div>
-							<div class="col-2"></div>
-								<h3 class="card-header">Service 3</h3>
-									<p class="card-body">Lorem</p>
-							</div>
-							<div class="col-2"></div>
-								<h3 class="card-header">Service 3</h3>
-									<p class="card-body">Lorem</p>
-							</div>
-							<div class="col-2"></div>
-								<h3 class="card-header">Service 3</h3>
-									<p class="card-body">Lorem</p>
-							</div>
-						</section>
 					</section>
 				</div>
 			</section>
 		</main>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script
+		  src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+		  integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+		  crossorigin="anonymous"
+		></script>
+	
+		<script src="./assets/js/script.js"></script>
 	</body>
 </html>
