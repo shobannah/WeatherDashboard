@@ -16,13 +16,12 @@ var APIKey = "ee1d17369c17fb2d95eb1b5c4433c89b";
 var cities = []
 
 
-
 button.addEventListener('click', getAPI)
 
 
-function getAPI(city) {
+function getAPI(ity) {
 
-	city = search.value
+	
 
 		
 	//buttons for the cities already searched
@@ -35,10 +34,10 @@ function getAPI(city) {
 		storeCities.append(storage)
 		
 		}
-		storage.addEventListener('click', getAPI)
+	storage.addEventListener('click', getAPI)
 		
 	//getting data from city name
-	var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + APIKey 
+	var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&appid=" + APIKey 
 
 	fetch(requestUrl)
 	.then(function (response) {
