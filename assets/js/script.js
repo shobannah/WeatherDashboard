@@ -1,4 +1,4 @@
-
+//gloabal variable
 var button = document.querySelector('.button');
 var search = document.querySelector('.search');
 var dataContainer = document.querySelector('#dataContainer');
@@ -9,12 +9,35 @@ var day3 = document.querySelector('#day3');
 var day4 = document.querySelector('#day4');
 var day5 = document.querySelector('#day5');
 
+var storeCities = document.querySelector('#store-cities');
 
 var APIKey = "ee1d17369c17fb2d95eb1b5c4433c89b";
 
-function getAPI() {
+var cities = []
 
-	var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + search.value + "&appid=" + APIKey 
+
+
+button.addEventListener('click', getAPI)
+
+
+function getAPI(city) {
+
+	city = search.value
+
+	
+	cities.push(search.value)
+	localStorage.setItem('cities',JSON.stringify(cities))
+	for (i=0; i < cities.length; i++) {
+		var storage = document.createElement('button')
+		storage.textContent = cities[i]
+		storeCities.append(storage)
+		city= cities[i]
+		storage.addEventListener('click', getAPI)
+		}
+
+		
+	//getting data from city name
+	var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + APIKey 
 
 	fetch(requestUrl)
 	.then(function (response) {
@@ -26,8 +49,11 @@ function getAPI() {
 	.then(function (geoData) {
 		var lat = geoData.lat
 		var lon = geoData.lon
+		
 
 		//28.5421 -81.379
+
+		//retrieving lat and lon from ity name
 
 		requestUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + APIKey
 	
@@ -37,6 +63,10 @@ function getAPI() {
 		})
 		.then(function (data) {
 			console.log(data);
+
+			dataContainer.innerHTML = "";
+
+			//adding API elements to html to show on page
 
 			var cityName = document.createElement('h3')
 			cityName.textContent = data.city.name + ' (' + data.list[0].dt_txt + ')' 
@@ -169,16 +199,14 @@ function getAPI() {
 			day5.append(humidity)
 
 			
+			
 		})	
+
 	}
 
 )}
 
-button.addEventListener('click', getAPI)
 
-
-localStorage.setItem('city',getAPI.toString())
-JSON.parse(localStorage.getItem('city'))
 
 
 
