@@ -3,8 +3,7 @@
 
 ## Description
 
-This is a quiz that has you answer code-related questions within the time limit.
-15 seconds will be subtracted from the clock when you answer a question incorrectly.
+This is a weather dashboard that you can put a city name into and then the weather forecast for the next 5 days will display. 
 
 ## Screenshot
 
@@ -12,4 +11,4 @@ This is a quiz that has you answer code-related questions within the time limit.
 
 ## Link
 
-<a href=https://shobannah.github.io/codeQuiz/> Coding Quiz
+<a href=https://shobannah.github.io/WeatherDashboard/> Weather Dashboard

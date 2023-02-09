@@ -24,17 +24,18 @@ function getAPI(city) {
 
 	city = search.value
 
-	
+		
+	//buttons for the cities already searched
 	cities.push(search.value)
 	localStorage.setItem('cities',JSON.stringify(cities))
+	var storage = document.createElement('button')
+
 	for (i=0; i < cities.length; i++) {
-		var storage = document.createElement('button')
 		storage.textContent = cities[i]
 		storeCities.append(storage)
-		city= cities[i]
-		storage.addEventListener('click', getAPI)
+		
 		}
-
+		storage.addEventListener('click', getAPI)
 		
 	//getting data from city name
 	var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + APIKey 
@@ -49,8 +50,10 @@ function getAPI(city) {
 	.then(function (geoData) {
 		var lat = geoData.lat
 		var lon = geoData.lon
-		
+			
+	
 
+		
 		//28.5421 -81.379
 
 		//retrieving lat and lon from ity name
